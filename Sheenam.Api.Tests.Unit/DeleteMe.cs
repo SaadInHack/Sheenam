@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//==================================================
+// Copyright (c) Coalation of Good-Hearted Engineers
+// Free to Use Comfort And Peace
+//==================================================
+
+using Xunit;
 
 namespace Sheenam.Api.Tests.Unit
 {
-    internal class DeleteMe
+    public class DeleteMe
     {
+        [Fact]
+        public void ShouldBeTrue() => Assert.True(true);
     }
 }
