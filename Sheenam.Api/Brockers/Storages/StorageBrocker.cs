@@ -27,6 +27,6 @@ namespace Sheenam.Api.Brockers.Storages
             optionsBuilder.UseSqlServer(connectionString);
         }
 
-        public override void Dispose(){}
+        public override void Dispose() { }
     }
 }

@@ -2,5 +2,6 @@
 {
     public interface IStorageBroker
     {
+        void Dispose();
     }
 }
