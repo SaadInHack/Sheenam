@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace Sheenam.Api.Brockers.Storages
 {
-    public partial class StorageBrocker : EFxceptionsContext
+    public partial class StorageBrocker : EFxceptionsContext, IStorageBroker
     {
         private readonly IConfiguration configuration;
 
