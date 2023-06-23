@@ -1,6 +1,6 @@
 ﻿//==================================================
 // Copyright (c) Coalation of Good-Hearted Engineers
-// Free to Use Comfort And Peace
+// Free to Use To Find Comfort And Peace
 //==================================================
 
 using System;
