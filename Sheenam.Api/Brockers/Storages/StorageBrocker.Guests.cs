@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Sheenam.Api.Moduls.Foundations.Guests;
 using System.Threading.Tasks;
 
-namespace Sheenam.Api.Brockers.Storages
+namespace Sheenam.Api.Brokers.Storages
 {
     public partial class StorageBrocker
     {

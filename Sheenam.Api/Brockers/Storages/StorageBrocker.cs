@@ -7,7 +7,7 @@ using EFxceptions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace Sheenam.Api.Brockers.Storages
+namespace Sheenam.Api.Brokers.Storages
 {
     public partial class StorageBrocker : EFxceptionsContext, IStorageBroker
     {
