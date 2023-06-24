@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//==================================================
+// Copyright (c) Coalation of Good-Hearted Engineers
+// Free to Use To Find Comfort And Peace
+//==================================================
+
 
 namespace Sheenam.Api.Tests.Unit.Services.Foundations.Guests
 {
-    public class GuestServiceTests
+    public partial class GuestServiceTests
     {
     }
 }

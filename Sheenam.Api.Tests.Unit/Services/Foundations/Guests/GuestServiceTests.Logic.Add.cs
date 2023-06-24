@@ -32,7 +32,6 @@ namespace Sheenam.Api.Tests.Unit.Services.Foundations.Guests
                 await this.guestService.AddGuestAsync(inputGuest);
 
             // then
-
             actualGuest.Should().BeEquivalentTo(expectedGuest);
 
             this.storageBrokerMock.Verify(broker => 
@@ -40,6 +39,7 @@ namespace Sheenam.Api.Tests.Unit.Services.Foundations.Guests
                 Times.Once());
 
             this.storageBrokerMock.VerifyNoOtherCalls();
+            this.loggingBrokerMock.VerifyNoOtherCalls();
         }
     }
 }
