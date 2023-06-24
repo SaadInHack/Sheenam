@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Sheenam.Api.Brockers.Loggings;
 using Sheenam.Api.Brockers.Storages;
 
 namespace Sheenam.Api
@@ -30,8 +31,7 @@ namespace Sheenam.Api
             };
 
             services.AddControllers();
-            services.AddTransient<IStorageBroker, StorageBrocker>();
-
+            AddBrokers(services);
 
             services.AddSwaggerGen(options =>
             {
@@ -62,6 +62,12 @@ namespace Sheenam.Api
 
             app.UseEndpoints(endpoints =>
                 endpoints.MapControllers());
+        }
+
+        private static void AddBrokers(IServiceCollection services)
+        {
+            services.AddTransient<IStorageBroker, StorageBrocker>();
+            services.AddTransient<ILoggingBroker, LoggingBroker>();
         }
     }
 }
