@@ -8,7 +8,9 @@ using Sheenam.Api.Brockers.Loggings;
 using Sheenam.Api.Brokers.Storages;
 using Sheenam.Api.Moduls.Foundations.Guests;
 using Sheenam.Api.Services.Foundations.Guests;
+using System.Linq.Expressions;
 using Tynamix.ObjectFiller;
+using Xeptions;
 
 namespace Sheenam.Api.Tests.Unit.Services.Foundations.Guests
 {
@@ -34,6 +36,14 @@ namespace Sheenam.Api.Tests.Unit.Services.Foundations.Guests
 
         private static DateTimeOffset GetRandomDateTimeOffset() =>
             new DateTimeRange(earliestDate: new DateTime()).GetValue();
+
+        private Expression<Func<Xeption, bool>> SameExceptionAs(Xeption expectedExpection)
+        {
+            return actualException =>
+                actualException.Message == expectedExpection.Message
+                && actualException.InnerException.Message == expectedExpection.InnerException.Message
+                && (actualException.InnerException as Xeption).DataEquals(expectedExpection.InnerException.Data);
+        }
 
         private static Filler <Guest> CreateGuestFiller(DateTimeOffset date)
         {

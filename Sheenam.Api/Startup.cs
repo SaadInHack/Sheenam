@@ -9,7 +9,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Sheenam.Api.Brockers.Storages;
+using Sheenam.Api.Brokers.Storages;
+using Sheenam.Api.Brockers.Loggings;
 
 namespace Sheenam.Api
 {
