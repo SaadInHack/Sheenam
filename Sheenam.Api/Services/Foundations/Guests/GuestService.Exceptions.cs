@@ -3,7 +3,9 @@
 // Free to Use To Find Comfort And Peace
 //==================================================
 
+using System;
 using System.Threading.Tasks;
+using EFxceptions.Models.Exceptions;
 using Microsoft.Data.SqlClient;
 using Sheenam.Api.Moduls.Foundations.Guests;
 using Sheenam.Api.Moduls.Foundations.Guests.Exceptions;
@@ -37,7 +39,15 @@ namespace Sheenam.Api.Services.Foundations.Guests
 
                 throw CreateAndLogCriticalDependencyException(failedGuestStorageException);
             }
+            catch(DuplicateKeyException duplicateKeyException)
+            {
+                var alreadyExistGuestException = 
+                    new AlreadyExistGuestException(duplicateKeyException);
+
+                throw CreateAndLogDependencyValidationException(alreadyExistGuestException);
+            }
         }
+
         private GuestValidationException CreateAndLogValidationException(Xeption exception)
         {
             var guestValidationException =
@@ -54,6 +64,17 @@ namespace Sheenam.Api.Services.Foundations.Guests
             this.loggingBroker.LogCritical(guestDependencyException);
 
             return guestDependencyException;
+        }
+
+        private GuestDependencyValidationException CreateAndLogDependencyValidationException(
+            Xeption exception)
+        {
+            var guestDependencyValidationException =
+                new GuestDependencyValidationException(exception);
+
+            this.loggingBroker.LogError(guestDependencyValidationException); 
+
+            return guestDependencyValidationException;
         }
     }
 }
