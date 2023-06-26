@@ -6,9 +6,6 @@
 using Sheenam.Api.Moduls.Foundations.Guests;
 using Sheenam.Api.Moduls.Foundations.Guests.Exceptions;
 using System;
-using System.Data;
-using System.Reflection.Metadata;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Sheenam.Api.Services.Foundations.Guests
 {
