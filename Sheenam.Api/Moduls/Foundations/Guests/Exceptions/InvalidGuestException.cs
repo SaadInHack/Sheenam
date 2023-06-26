@@ -3,13 +3,14 @@
 // Free to Use To Find Comfort And Peace
 //==================================================
 
-using Xunit;
+using Xeptions;
 
-namespace Sheenam.Api.Tests.Unit
+namespace Sheenam.Api.Moduls.Foundations.Guests.Exceptions
 {
-    public class DeleteMe
+    public class InvalidGuestException : Xeption
     {
-        [Fact]
-        public void ShouldBeTrue() => Assert.True(true);
+        public InvalidGuestException()
+            :base(message: "Guest is invalid")
+        {}
     }
 }
