@@ -60,13 +60,8 @@ namespace Sheenam.Api.Tests.Unit.Services.Foundations.Guests
             return (T)(Object)randomNumber;
         }
 
-        private Expression<Func<Xeption, bool>> SameExceptionAs(Xeption expectedExpection)
-        {
-            return actualException =>
-                actualException.Message == expectedExpection.Message
-                && actualException.InnerException.Message == expectedExpection.InnerException.Message
-                && (actualException.InnerException as Xeption).DataEquals(expectedExpection.InnerException.Data);
-        }
+        private Expression<Func<Xeption, bool>> SameExceptionAs(Xeption expectedExpection) =>
+            actualException => actualException.SameExceptionAs(expectedExpection);
 
         private static Filler <Guest> CreateGuestFiller(DateTimeOffset date)
         {
