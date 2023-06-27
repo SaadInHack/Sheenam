@@ -69,5 +69,9 @@ namespace Sheenam.Api
             services.AddTransient<IStorageBroker, StorageBrocker>();
             services.AddTransient<ILoggingBroker, LoggingBroker>();
         }
+        private static void AddFoundationServices(IServiceCollection services)
+        {
+            services.AddTransient<IGuestService, GuestService>();
+        }
     }
 }
