@@ -2,7 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Sheenam.Api.Brockers.Storages;
+using Sheenam.Api.Brokers.Storages;
 
 #nullable disable
 
