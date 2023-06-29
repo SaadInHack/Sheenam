@@ -52,7 +52,7 @@ namespace Sheenam.Api.Tests.Unit.Services.Foundations.Guests
         {
             int randomNumber = GetRandomNumber();
 
-            while(Enum.IsDefined(typeof(T), randomNumber) is true)
+            while (Enum.IsDefined(typeof(T), randomNumber) is true)
             {
                 randomNumber = GetRandomNumber();
             }
@@ -63,7 +63,7 @@ namespace Sheenam.Api.Tests.Unit.Services.Foundations.Guests
         private Expression<Func<Xeption, bool>> SameExceptionAs(Xeption expectedExpection) =>
             actualException => actualException.SameExceptionAs(expectedExpection);
 
-        private static Filler <Guest> CreateGuestFiller(DateTimeOffset date)
+        private static Filler<Guest> CreateGuestFiller(DateTimeOffset date)
         {
             var filler = new Filler<Guest>();
 

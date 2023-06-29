@@ -11,8 +11,8 @@ namespace Sheenam.Api.Moduls.Foundations.Guests.Exceptions
     public class FailedGuestStorageException : Xeption
     {
         public FailedGuestStorageException(Exception innerException)
-            :base(message: "Failed guest storage error occurred, contact suppor",
+            : base(message: "Failed guest storage error occurred, contact suppor",
                  innerException)
-        {}
+        { }
     }
 }
