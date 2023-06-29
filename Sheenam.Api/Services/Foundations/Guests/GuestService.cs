@@ -29,6 +29,7 @@ namespace Sheenam.Api.Services.Foundations.Guests
         TryCatch(async () =>
         {
             ValidateGuestOnAdd(guest);
+
             return await this.storageBroker.InsertGuestAsync(guest);
         });
 
