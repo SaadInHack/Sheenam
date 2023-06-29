@@ -12,7 +12,7 @@ namespace Sheenam.Api.Brokers.Storages
 {
     public partial class StorageBrocker
     {
-        public DbSet<Guest> Guests{ get; set; }
+        public DbSet<Guest> Guests { get; set; }
 
         public async ValueTask<Guest> InsertGuestAsync(Guest guest)
         {

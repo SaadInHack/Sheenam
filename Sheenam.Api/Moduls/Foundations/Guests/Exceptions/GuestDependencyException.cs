@@ -10,8 +10,8 @@ namespace Sheenam.Api.Moduls.Foundations.Guests.Exceptions
     public class GuestDependencyException : Xeption
     {
         public GuestDependencyException(Xeption innerXeption)
-          :base(message: "Guest dependecy error occurred, contact support",
+          : base(message: "Guest dependecy error occurred, contact support",
              innerXeption)
-        {}
+        { }
     }
 }

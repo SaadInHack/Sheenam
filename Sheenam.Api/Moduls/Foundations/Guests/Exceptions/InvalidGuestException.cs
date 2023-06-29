@@ -10,7 +10,7 @@ namespace Sheenam.Api.Moduls.Foundations.Guests.Exceptions
     public class InvalidGuestException : Xeption
     {
         public InvalidGuestException()
-            :base(message: "Guest is invalid")
-        {}
+            : base(message: "Guest is invalid")
+        { }
     }
 }

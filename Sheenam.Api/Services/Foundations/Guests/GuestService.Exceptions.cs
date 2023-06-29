@@ -3,12 +3,12 @@
 // Free to Use To Find Comfort And Peace
 //==================================================
 
-using System;
-using System.Threading.Tasks;
 using EFxceptions.Models.Exceptions;
 using Microsoft.Data.SqlClient;
 using Sheenam.Api.Moduls.Foundations.Guests;
 using Sheenam.Api.Moduls.Foundations.Guests.Exceptions;
+using System;
+using System.Threading.Tasks;
 using Xeptions;
 
 namespace Sheenam.Api.Services.Foundations.Guests
@@ -25,28 +25,28 @@ namespace Sheenam.Api.Services.Foundations.Guests
             }
             catch (NullGuestException nullGuestException)
             {
-                
+
                 throw CreateAndLogValidationException(nullGuestException);
             }
-            catch(InvalidGuestException invalidGuestException)
+            catch (InvalidGuestException invalidGuestException)
             {
                 throw CreateAndLogValidationException(invalidGuestException);
             }
-            catch(SqlException sqlException)
+            catch (SqlException sqlException)
             {
-                var failedGuestStorageException = 
+                var failedGuestStorageException =
                     new FailedGuestStorageException(sqlException);
 
                 throw CreateAndLogCriticalDependencyException(failedGuestStorageException);
             }
-            catch(DuplicateKeyException duplicateKeyException)
+            catch (DuplicateKeyException duplicateKeyException)
             {
-                var alreadyExistGuestException = 
+                var alreadyExistGuestException =
                     new AlreadyExistGuestException(duplicateKeyException);
 
                 throw CreateAndLogDependencyValidationException(alreadyExistGuestException);
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 var failedGuestServiceException =
                     new FailedGuestServiceException(exception);
@@ -79,7 +79,7 @@ namespace Sheenam.Api.Services.Foundations.Guests
             var guestDependencyValidationException =
                 new GuestDependencyValidationException(exception);
 
-            this.loggingBroker.LogError(guestDependencyValidationException); 
+            this.loggingBroker.LogError(guestDependencyValidationException);
 
             return guestDependencyValidationException;
         }

@@ -63,7 +63,7 @@ namespace Sheenam.Api.Tests.Unit.Services.Foundations.Guests
             var alreadyExistGuestException =
                 new AlreadyExistGuestException(duplicateKeyException);
 
-            var expectedGuestDependencyValidationException = 
+            var expectedGuestDependencyValidationException =
                 new GuestDependencyValidationException(alreadyExistGuestException);
 
 
@@ -98,7 +98,7 @@ namespace Sheenam.Api.Tests.Unit.Services.Foundations.Guests
             Guest someGuest = CreateRandomGuest();
             var serviceException = new Exception();
 
-            var failedGuestServiceException = 
+            var failedGuestServiceException =
                 new FailedGuestServiceException(serviceException);
 
             var expectedGuestServiceException =
